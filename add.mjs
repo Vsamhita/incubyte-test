@@ -1,8 +1,11 @@
 function add(numbers) {
     if (!numbers) return 0;
     
+    let delimiter = /,|\n/
+    
     // Split numbers by the delimiter
-    const numList = numbers.split(",");
+    const numList = numbers.split(delimiter);
+    
     let result = 0
     
     for (let num of numList) {
@@ -17,4 +20,4 @@ function add(numbers) {
 console.log(add("")); // 0
 console.log(add("1")); // 1
 console.log(add("1,5")); // 6
-
+console.log(add("1\n2,3")); // 6
